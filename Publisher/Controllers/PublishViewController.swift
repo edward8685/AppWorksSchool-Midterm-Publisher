@@ -20,6 +20,7 @@ class PublishViewController: UIViewController {
     @IBAction func publishArcticle(_ sender: UIButton) {
         
         addData()
+        dismiss(animated: true)
     }
     
     let db = Firestore.firestore()
@@ -38,10 +39,6 @@ class PublishViewController: UIViewController {
         contentTextField.delegate = self
         view.backgroundColor = .clear
         
-        
-        
-        
-        // Do any additional setup after loading the view.
     }
     
     func addData() {

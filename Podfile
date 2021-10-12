@@ -9,5 +9,6 @@ target 'Publisher' do
   pod 'Firebase/Analytics'
   pod 'FirebaseFirestore'
   pod 'Firebase/Core'
+  pod 'MJRefresh'
 
 end

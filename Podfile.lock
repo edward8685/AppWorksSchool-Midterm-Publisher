@@ -464,6 +464,7 @@ PODS:
     - gRPC-Core/Interface (= 1.28.2)
   - gRPC-Core/Interface (1.28.2)
   - leveldb-library (1.22.1)
+  - MJRefresh (3.7.2)
   - nanopb (2.30908.0):
     - nanopb/decode (= 2.30908.0)
     - nanopb/encode (= 2.30908.0)
@@ -475,6 +476,7 @@ DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Core
   - FirebaseFirestore
+  - MJRefresh
 
 SPEC REPOS:
   trunk:
@@ -492,6 +494,7 @@ SPEC REPOS:
     - "gRPC-C++"
     - gRPC-Core
     - leveldb-library
+    - MJRefresh
     - nanopb
     - PromisesObjC
 
@@ -510,9 +513,10 @@ SPEC CHECKSUMS:
   "gRPC-C++": 13d8ccef97d5c3c441b7e3c529ef28ebee86fad2
   gRPC-Core: 4afa11bfbedf7cdecd04de535a9e046893404ed5
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
+  MJRefresh: 30997d30b347c8e9508a4db11e3a690da0c9b85a
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
 
-PODFILE CHECKSUM: 679e0593e30650b529639bdfa95963a35f5fa1c3
+PODFILE CHECKSUM: dc19ea56f0ccfb6fbb33f1d2ace5887f7905af92
 
 COCOAPODS: 1.10.2

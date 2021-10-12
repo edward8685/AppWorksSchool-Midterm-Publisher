@@ -15,20 +15,12 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jgc-Eg-P2f">
-                                <rect key="frame" x="327" y="5" width="67" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <segue destination="FND-1L-RsI" kind="presentation" identifier="toPublishPage" modalPresentationStyle="fullScreen" id="5Eq-IL-Ra5"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <segue destination="FND-1L-RsI" kind="presentation" identifier="toPublishPage" id="6kI-j8-8yl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -39,14 +31,14 @@
             <objects>
                 <viewController id="FND-1L-RsI" customClass="PublishViewController" customModule="Publisher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ui7-vn-SMb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wo9-vu-iLB">
-                                <rect key="frame" x="16" y="244" width="382" height="418"/>
+                                <rect key="frame" x="16" y="200" width="382" height="408"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="jHQ-9s-Qja">
-                                        <rect key="frame" x="4" y="4" width="374" height="410"/>
+                                        <rect key="frame" x="4" y="4" width="374" height="400"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="input title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1rf-ac-rbg">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
@@ -65,17 +57,24 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="input content" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kQW-j6-Geb">
-                                                <rect key="frame" x="0.0" y="48" width="374" height="338"/>
+                                                <rect key="frame" x="0.0" y="48" width="374" height="328"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoL-7p-Cec">
-                                                <rect key="frame" x="0.0" y="390" width="374" height="20"/>
+                                                <rect key="frame" x="0.0" y="380" width="374" height="20"/>
+                                                <color key="backgroundColor" red="0.18039217590000001" green="0.050980389119999997" blue="0.50196081400000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="sA6-qi-Mrb"/>
                                                 </constraints>
+                                                <color key="tintColor" red="0.98039215800000001" green="0.98039215800000001" blue="0.98039215800000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Publish"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="publishArcticle:" destination="FND-1L-RsI" eventType="touchUpInside" id="fO5-ou-CnO"/>
                                                 </connections>
@@ -93,7 +92,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="18X-eb-1vb"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="18X-eb-1vb" firstAttribute="trailing" secondItem="Wo9-vu-iLB" secondAttribute="trailing" constant="16" id="PqJ-gC-DJo"/>
                             <constraint firstItem="18X-eb-1vb" firstAttribute="bottom" secondItem="Wo9-vu-iLB" secondAttribute="bottom" constant="200" id="ROd-ET-mve"/>
@@ -102,9 +101,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="categoryTextField" destination="i4C-Fv-C00" id="vBl-Pb-TXP"/>
-                        <outlet property="cotentTextField" destination="kQW-j6-Geb" id="nSi-Zv-mkh"/>
-                        <outlet property="titleTextField" destination="1rf-ac-rbg" id="WF9-dp-Rtv"/>
+                        <outlet property="categoryTextField" destination="i4C-Fv-C00" id="A3Q-he-eeS"/>
+                        <outlet property="contentTextField" destination="kQW-j6-Geb" id="5uz-O6-5KV"/>
+                        <outlet property="titleTextField" destination="1rf-ac-rbg" id="ivh-JL-oJZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hT-yd-wSh" sceneMemberID="firstResponder"/>

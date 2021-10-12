@@ -13,7 +13,7 @@ class ArticleCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     
-    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var categoryButton: UIButton!
     
     @IBOutlet weak var timeLabel: UILabel!
     

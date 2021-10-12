@@ -19,7 +19,9 @@
 		7483879727151DDA005F06F4 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7483879527151DDA005F06F4 /* UIButtonExtension.swift */; };
 		7483879C27151FE5005F06F4 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7483879A27151FE5005F06F4 /* ArticleCell.swift */; };
 		7483879D27151FE5005F06F4 /* ArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7483879B27151FE5005F06F4 /* ArticleCell.xib */; };
-		A4B553A35DA90BADC91EB504 /* Pods_Publisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8AE8EE93F9CA5283B3B2230 /* Pods_Publisher.framework */; };
+		748387A3271559FE005F06F4 /* HeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748387A1271559FE005F06F4 /* HeaderViewCell.swift */; };
+		748387A4271559FE005F06F4 /* HeaderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 748387A2271559FE005F06F4 /* HeaderViewCell.xib */; };
+		DDA8107749BC576B54D5299F /* Pods_Publisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A088C107DDD24C6124C96461 /* Pods_Publisher.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,8 +39,10 @@
 		7483879527151DDA005F06F4 /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		7483879A27151FE5005F06F4 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		7483879B27151FE5005F06F4 /* ArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCell.xib; sourceTree = "<group>"; };
+		748387A1271559FE005F06F4 /* HeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewCell.swift; sourceTree = "<group>"; };
+		748387A2271559FE005F06F4 /* HeaderViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderViewCell.xib; sourceTree = "<group>"; };
+		A088C107DDD24C6124C96461 /* Pods_Publisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Publisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C95F33DF9C060C349F2013EC /* Pods-Publisher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Publisher.debug.xcconfig"; path = "Target Support Files/Pods-Publisher/Pods-Publisher.debug.xcconfig"; sourceTree = "<group>"; };
-		E8AE8EE93F9CA5283B3B2230 /* Pods_Publisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Publisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE7BEA14A8C6A902627DBCCB /* Pods-Publisher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Publisher.release.xcconfig"; path = "Target Support Files/Pods-Publisher/Pods-Publisher.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -47,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4B553A35DA90BADC91EB504 /* Pods_Publisher.framework in Frameworks */,
+				DDA8107749BC576B54D5299F /* Pods_Publisher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,7 +61,7 @@
 		114D0B31FEBA853530F63002 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E8AE8EE93F9CA5283B3B2230 /* Pods_Publisher.framework */,
+				A088C107DDD24C6124C96461 /* Pods_Publisher.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -103,6 +107,8 @@
 			children = (
 				7483879A27151FE5005F06F4 /* ArticleCell.swift */,
 				7483879B27151FE5005F06F4 /* ArticleCell.xib */,
+				748387A1271559FE005F06F4 /* HeaderViewCell.swift */,
+				748387A2271559FE005F06F4 /* HeaderViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -136,7 +142,7 @@
 				748387752715174A005F06F4 /* Sources */,
 				748387762715174A005F06F4 /* Frameworks */,
 				748387772715174A005F06F4 /* Resources */,
-				FF2D2D631E88845771E22A44 /* [CP] Embed Pods Frameworks */,
+				1926FCDC4F8872DE68482B9A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -188,6 +194,7 @@
 				748387892715174C005F06F4 /* LaunchScreen.storyboard in Resources */,
 				7483879327151B3E005F06F4 /* GoogleService-Info.plist in Resources */,
 				748387862715174C005F06F4 /* Assets.xcassets in Resources */,
+				748387A4271559FE005F06F4 /* HeaderViewCell.xib in Resources */,
 				7483879D27151FE5005F06F4 /* ArticleCell.xib in Resources */,
 				748387842715174A005F06F4 /* Main.storyboard in Resources */,
 			);
@@ -196,6 +203,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1926FCDC4F8872DE68482B9A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Publisher/Pods-Publisher-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Publisher/Pods-Publisher-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Publisher/Pods-Publisher-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B812179C73D873FC55F8A430 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -218,23 +242,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FF2D2D631E88845771E22A44 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Publisher/Pods-Publisher-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Publisher/Pods-Publisher-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Publisher/Pods-Publisher-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -245,6 +252,7 @@
 				7483879127151AC1005F06F4 /* PublishViewController.swift in Sources */,
 				7483879627151DDA005F06F4 /* UIViewExtensions.swift in Sources */,
 				748387812715174A005F06F4 /* HomeVIewController.swift in Sources */,
+				748387A3271559FE005F06F4 /* HeaderViewCell.swift in Sources */,
 				7483877D2715174A005F06F4 /* AppDelegate.swift in Sources */,
 				7483879C27151FE5005F06F4 /* ArticleCell.swift in Sources */,
 				7483877F2715174A005F06F4 /* SceneDelegate.swift in Sources */,
