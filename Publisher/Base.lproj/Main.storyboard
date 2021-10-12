@@ -20,7 +20,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="WMA-Hn-LTl"/>
                     <connections>
-                        <segue destination="FND-1L-RsI" kind="modal" identifier="toPublishPage" modalPresentationStyle="pageSheet" id="6kI-j8-8yl"/>
+                        <segue destination="FND-1L-RsI" kind="modal" identifier="toPublishPage" id="6kI-j8-8yl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -42,31 +42,31 @@
                                         <rect key="frame" x="4" y="4" width="374" height="400"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="input title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1rf-ac-rbg">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="IJ7-wo-zhG"/>
+                                                    <constraint firstAttribute="height" constant="40" id="bJV-H8-JFn"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="input category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i4C-Fv-C00">
-                                                <rect key="frame" x="0.0" y="24" width="374" height="20"/>
+                                                <rect key="frame" x="0.0" y="44" width="374" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="OCq-bE-98B"/>
+                                                    <constraint firstAttribute="height" constant="40" id="hej-zR-eJI"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="input content" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kQW-j6-Geb">
-                                                <rect key="frame" x="0.0" y="48" width="374" height="328"/>
+                                                <rect key="frame" x="0.0" y="88" width="374" height="268"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoL-7p-Cec">
-                                                <rect key="frame" x="0.0" y="380" width="374" height="20"/>
+                                                <rect key="frame" x="0.0" y="360" width="374" height="40"/>
                                                 <color key="backgroundColor" red="0.18039217590000001" green="0.050980389119999997" blue="0.50196081400000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="sA6-qi-Mrb"/>
+                                                    <constraint firstAttribute="height" constant="40" id="sA6-qi-Mrb"/>
                                                 </constraints>
                                                 <color key="tintColor" red="0.98039215800000001" green="0.98039215800000001" blue="0.98039215800000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>

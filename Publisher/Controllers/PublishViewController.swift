@@ -18,14 +18,39 @@ class PublishViewController: UIViewController {
     @IBOutlet weak var contentTextField: UITextField!
     
     @IBAction func publishArcticle(_ sender: UIButton) {
+        if authorInfo == nil {
+            let controller = UIAlertController(title: "No Author Info", message: "Please Login or check your account", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            controller.addAction(okAction)
+            present(controller, animated: true, completion: nil)
+            dismiss(animated: true)
+            
+        } else {
+            
+//            addData()
+            let controller = UIAlertController(title: "Publish Successfully!", message: "", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+                self.dismiss(animated: false, completion: nil)
+            }
+            controller.addAction(okAction)
+            present(controller, animated: true, completion: nil)
+        }
         
-        addData()
-        dismiss(animated: true)
+        
+        
     }
+    
+    //    var authorInfo: [String : Any]?
+    
+    var authorInfo = [ "author": [
+        "email": "wayne@school.appworks.tw", "id": "waynechen323",
+        "name": "AKA小安老師"
+    ]
+    ]
     
     let db = Firestore.firestore()
     
-    var inputDatas : [String] = ["","",""]
+    var inputDatas: [String] = ["","",""]
     
     var firebaseModel: [String : Any] = [:]
     

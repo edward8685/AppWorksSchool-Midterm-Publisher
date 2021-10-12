@@ -27,7 +27,7 @@ class HomeViewController: UIViewController {
     
     let db = Firestore.firestore()
     
-    let button = UIButton()
+    let toPublishPagebutton = UIButton()
     
     var dbModels: [[String : Any]] = []
     
@@ -74,7 +74,7 @@ class HomeViewController: UIViewController {
     
     func readData() {
         dbModels = []
-        db.collection("articles").getDocuments { (querySnapshot, error) in
+        db.collection("articles").order(by: "createdTime", descending: true).getDocuments { (querySnapshot, error) in
             if let e = error {
                 print("Error in read data. \(e)")
             } else {
@@ -94,7 +94,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-        100
+        80
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -122,10 +122,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
         
         cell.titleLabel.text = dbModels[indexPath.row]["title"] as? String
-//        let author = dbModels[indexPath.row]["author"]
-        //        print(author)
-        //        cell.nameLabel.text = author["name"] as? String
-        cell.nameLabel.text = "AKA小安老師"
+        guard let author = dbModels[indexPath.row]["author"] as? [String: Any],
+              let name = author["name"] as? String else {fatalError("Can not get author name")}
+        cell.nameLabel.text = name
+
         
         let category = dbModels[indexPath.row]["category"] as? String
         cell.categoryButton.setTitle(category, for: .normal)
@@ -148,21 +148,21 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let width = UIScreen.main.bounds.width
         let height = UIScreen.main.bounds.height
         
-        button.frame = CGRect(x: width - 70, y: height - 100, width: 50, height: 50)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .systemPurple
+        toPublishPagebutton.frame = CGRect(x: width - 70, y: height - 100, width: 50, height: 50)
+        toPublishPagebutton.translatesAutoresizingMaskIntoConstraints = false
+        toPublishPagebutton.backgroundColor = UIColor(red: 46 / 255 , green: 13 / 255 , blue: 128 / 255 , alpha: 1.00)
         let plusImage = UIImage(systemName: "plus")
-        button.setImage(plusImage, for: .normal)
-        button.tintColor = .white
-        button.layer.cornerRadius = 25
-        button.layer.masksToBounds = true
-    
+        toPublishPagebutton.setImage(plusImage, for: .normal)
+        toPublishPagebutton.tintColor = .white
+        toPublishPagebutton.layer.cornerRadius = 25
+        toPublishPagebutton.layer.masksToBounds = true
         
-        button.addTarget(self, action: #selector(publishNewArticle), for: .touchUpInside)
+        toPublishPagebutton.addTarget(self, action: #selector(publishNewArticle), for: .touchUpInside)
         if let window = UIApplication.shared.keyWindow {
-                window.addSubview(button)
+                window.addSubview(toPublishPagebutton)
             }
     }
+    
     
 }
 
