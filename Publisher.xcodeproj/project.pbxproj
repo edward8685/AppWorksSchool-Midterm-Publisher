@@ -89,13 +89,10 @@
 			children = (
 				7483877C2715174A005F06F4 /* AppDelegate.swift */,
 				7483877E2715174A005F06F4 /* SceneDelegate.swift */,
+				748387A527158DEE005F06F4 /* Extensions */,
 				7483879927151F33005F06F4 /* Controllers */,
 				7483879827151F2A005F06F4 /* Views */,
-				7483879527151DDA005F06F4 /* UIButtonExtension.swift */,
-				7483879427151DDA005F06F4 /* UIViewExtensions.swift */,
-				748387822715174A005F06F4 /* Main.storyboard */,
 				748387852715174C005F06F4 /* Assets.xcassets */,
-				748387872715174C005F06F4 /* LaunchScreen.storyboard */,
 				7483878A2715174C005F06F4 /* Info.plist */,
 				7483879227151B3E005F06F4 /* GoogleService-Info.plist */,
 			);
@@ -105,6 +102,8 @@
 		7483879827151F2A005F06F4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				748387872715174C005F06F4 /* LaunchScreen.storyboard */,
+				748387822715174A005F06F4 /* Main.storyboard */,
 				7483879A27151FE5005F06F4 /* ArticleCell.swift */,
 				7483879B27151FE5005F06F4 /* ArticleCell.xib */,
 				748387A1271559FE005F06F4 /* HeaderViewCell.swift */,
@@ -120,6 +119,15 @@
 				7483879027151AC1005F06F4 /* PublishViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		748387A527158DEE005F06F4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7483879527151DDA005F06F4 /* UIButtonExtension.swift */,
+				7483879427151DDA005F06F4 /* UIViewExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		75D0B2CA376A870FC95503AB /* Pods */ = {

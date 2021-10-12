@@ -12,10 +12,6 @@ import MJRefresh
 
 class HomeViewController: UIViewController {
     
-    @objc func publishNewArticle() {
-        performSegue(withIdentifier: "toPublishPage", sender: nil)
-    }
-    
     let header = MJRefreshNormalHeader()
     
     private var tableView: UITableView! {
@@ -31,9 +27,6 @@ class HomeViewController: UIViewController {
     
     var dbModels: [[String : Any]] = []
     
-    let firebaseTimeStamp = FieldValue.serverTimestamp()
-    let timeStamp = NSDate().timeIntervalSince1970
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,12 +38,15 @@ class HomeViewController: UIViewController {
         
         tableView.lk_registerCellWithNib(identifier: HeaderViewCell.identifier, bundle: nil)
         
-        
         tableView.contentInsetAdjustmentBehavior = .never
+        
+        //        self.tableView.contentInset = UIEdgeInsets.zero
         
         tableView.contentInset = UIEdgeInsets(top: -UIApplication.shared.statusBarFrame.size.height, left: 0, bottom: 0, right: 0)
         
-        readData()
+        fetchData()
+        
+        navigationController?.isNavigationBarHidden = true
         
         header.setRefreshingTarget(self, refreshingAction: #selector(self.headerRefresh))
         self.tableView.mj_header = header
@@ -60,19 +56,18 @@ class HomeViewController: UIViewController {
         setUpButton ()
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        button.removeFromSuperview()
-//    }
-    
     
     @objc func headerRefresh(){
-        readData()
+        fetchData()
         self.tableView.mj_header?.endRefreshing()
     }
     
+    @objc func publishNewArticle() {
+        performSegue(withIdentifier: "toPublishPage", sender: nil)
+    }
     
-    func readData() {
+    
+    func fetchData() {
         dbModels = []
         db.collection("articles").order(by: "createdTime", descending: true).getDocuments { (querySnapshot, error) in
             if let e = error {
@@ -93,6 +88,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
+    //headerView
     func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
         80
     }
@@ -103,6 +99,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
         return headerView
     }
+    
+    // MARK: - TableView Delegate
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
@@ -120,12 +118,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ArticleCell.identifier, for: indexPath) as? ArticleCell else {fatalError("Could not create Cell")}
         
-        
         cell.titleLabel.text = dbModels[indexPath.row]["title"] as? String
+        
         guard let author = dbModels[indexPath.row]["author"] as? [String: Any],
               let name = author["name"] as? String else {fatalError("Can not get author name")}
         cell.nameLabel.text = name
-
         
         let category = dbModels[indexPath.row]["category"] as? String
         cell.categoryButton.setTitle(category, for: .normal)
@@ -135,7 +132,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy.MM.dd HH:mm"
         let time = dateFormatter.string(from: date)
-        print("\(time)")
         
         cell.timeLabel.text = time
         
@@ -145,24 +141,19 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func setUpButton () {
-        let width = UIScreen.main.bounds.width
-        let height = UIScreen.main.bounds.height
+        let width = view.frame.size.width
+        let height = view.frame.size.height
         
-        toPublishPagebutton.frame = CGRect(x: width - 70, y: height - 100, width: 50, height: 50)
-        toPublishPagebutton.translatesAutoresizingMaskIntoConstraints = false
+        toPublishPagebutton.frame = CGRect(x: width - 70, y: height - 120, width: 50, height: 50)
         toPublishPagebutton.backgroundColor = UIColor(red: 46 / 255 , green: 13 / 255 , blue: 128 / 255 , alpha: 1.00)
-        let plusImage = UIImage(systemName: "plus")
+        let plusImage = UIImage(systemName: "plus",withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight: .medium))
         toPublishPagebutton.setImage(plusImage, for: .normal)
         toPublishPagebutton.tintColor = .white
         toPublishPagebutton.layer.cornerRadius = 25
         toPublishPagebutton.layer.masksToBounds = true
         
         toPublishPagebutton.addTarget(self, action: #selector(publishNewArticle), for: .touchUpInside)
-        if let window = UIApplication.shared.keyWindow {
-                window.addSubview(toPublishPagebutton)
-            }
+        
+        self.navigationController?.view.addSubview(toPublishPagebutton)
     }
-    
-    
 }
-

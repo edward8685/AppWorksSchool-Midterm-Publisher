@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publisher" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XD1-zC-lsF">
-                        <rect key="frame" x="142.5" y="70" width="71" height="22"/>
+                        <rect key="frame" x="142.5" y="80" width="71" height="12"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.90588235859999999" green="0.90588235859999999" blue="0.90588235859999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
@@ -26,7 +26,7 @@
                 <color key="backgroundColor" red="0.18039217590000001" green="0.050980389119999997" blue="0.50196081400000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="XD1-zC-lsF" secondAttribute="bottom" constant="20" id="6RC-Yu-C95"/>
-                    <constraint firstItem="XD1-zC-lsF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="70" id="na0-MM-8Fv"/>
+                    <constraint firstItem="XD1-zC-lsF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="80" id="na0-MM-8Fv"/>
                     <constraint firstItem="XD1-zC-lsF" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="xuY-DK-bTQ"/>
                 </constraints>
             </tableViewCellContentView>
