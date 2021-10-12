@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,42 +22,16 @@
                         <color key="textColor" red="0.90588235859999999" green="0.90588235859999999" blue="0.90588235859999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="492-F6-egH">
-                        <rect key="frame" x="306" y="62" width="50" height="50"/>
-                        <color key="backgroundColor" red="0.3803921938" green="0.2352941036" blue="0.69019609689999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="50" id="gc0-jb-ks2"/>
-                            <constraint firstAttribute="height" constant="50" id="tRi-xh-uxW"/>
-                        </constraints>
-                        <color key="tintColor" red="0.90588235859999999" green="0.90588235859999999" blue="0.90588235859999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain">
-                            <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
-                        </buttonConfiguration>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="25"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </button>
                 </subviews>
                 <color key="backgroundColor" red="0.18039217590000001" green="0.050980389119999997" blue="0.50196081400000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="XD1-zC-lsF" secondAttribute="bottom" constant="20" id="6RC-Yu-C95"/>
                     <constraint firstItem="XD1-zC-lsF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="80" id="na0-MM-8Fv"/>
-                    <constraint firstAttribute="trailing" secondItem="492-F6-egH" secondAttribute="trailing" id="pie-1C-X35"/>
                     <constraint firstItem="XD1-zC-lsF" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="xuY-DK-bTQ"/>
-                    <constraint firstAttribute="bottom" secondItem="492-F6-egH" secondAttribute="bottom" id="zLy-CH-GJL"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <connections>
-                <outlet property="publishButton" destination="492-F6-egH" id="ecn-4s-XkI"/>
-            </connections>
             <point key="canvasLocation" x="156.52173913043478" y="127.23214285714285"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="plus" catalog="system" width="128" height="113"/>
-    </resources>
 </document>

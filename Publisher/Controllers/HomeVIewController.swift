@@ -27,6 +27,8 @@ class HomeViewController: UIViewController {
     
     let db = Firestore.firestore()
     
+    let button = UIButton()
+    
     var dbModels: [[String : Any]] = []
     
     let firebaseTimeStamp = FieldValue.serverTimestamp()
@@ -55,8 +57,13 @@ class HomeViewController: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
-//        setUpButton ()
+        setUpButton ()
     }
+    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        button.removeFromSuperview()
+//    }
     
     
     @objc func headerRefresh(){
@@ -93,7 +100,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let headerView = Bundle.main.loadNibNamed(HeaderViewCell.identifier, owner: self, options: nil)?.first as? HeaderViewCell
         else {fatalError("Could not create HeaderView")}
-        headerView.publishButton.addTarget(self, action: #selector(publishNewArticle), for: .touchUpInside)
         
         return headerView
     }
@@ -139,28 +145,23 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func setUpButton () {
-        let button = UIButton()
-        tableView.addSubview(button)
-        tableView.bringSubviewToFront(button)
+        let width = UIScreen.main.bounds.width
+        let height = UIScreen.main.bounds.height
+        
+        button.frame = CGRect(x: width - 70, y: height - 100, width: 50, height: 50)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .systemPurple
-        button.setImage(UIImage(named: "plus"), for: .normal)
+        let plusImage = UIImage(systemName: "plus")
+        button.setImage(plusImage, for: .normal)
+        button.tintColor = .white
         button.layer.cornerRadius = 25
         button.layer.masksToBounds = true
-        
-        NSLayoutConstraint.activate([
-            
-            button.trailingAnchor.constraint(equalTo: tableView.trailingAnchor, constant: 50),
-            
-            button.bottomAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 50),
-            
-            button.widthAnchor.constraint(equalToConstant: 50),
-            
-            button.heightAnchor.constraint(equalToConstant: 50)
-            
-        ])
+    
         
         button.addTarget(self, action: #selector(publishNewArticle), for: .touchUpInside)
+        if let window = UIApplication.shared.keyWindow {
+                window.addSubview(button)
+            }
     }
     
 }

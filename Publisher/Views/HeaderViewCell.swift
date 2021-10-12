@@ -8,8 +8,6 @@
 import UIKit
 
 class HeaderViewCell: UITableViewCell {
-
-    @IBOutlet weak var publishButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

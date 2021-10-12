@@ -38,6 +38,7 @@ class PublishViewController: UIViewController {
         categoryTextField.delegate = self
         contentTextField.delegate = self
         view.backgroundColor = .clear
+        navigationController?.isNavigationBarHidden = true
         
     }
     
