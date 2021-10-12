@@ -8,7 +8,17 @@
 import UIKit
 
 class ArticleCell: UITableViewCell {
-
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var categoryLabel: UILabel!
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    @IBOutlet weak var contentLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

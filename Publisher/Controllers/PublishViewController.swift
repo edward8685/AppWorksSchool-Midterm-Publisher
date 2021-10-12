@@ -11,13 +11,33 @@ import FirebaseFirestore
 
 class PublishViewController: UIViewController {
     
+    @IBOutlet weak var titleTextField: UITextField!
+    
+    @IBOutlet weak var categoryTextField: UITextField!
+    
+    @IBOutlet weak var contentTextField: UITextField!
+    
+    @IBAction func publishArcticle(_ sender: UIButton) {
+        
+        addData()
+    }
+    
     let db = Firestore.firestore()
+    
+    var inputDatas : [String] = ["","",""]
+    
+    var firebaseModel: [String : Any] = [:]
     
     let firebaseTimeStamp = FieldValue.serverTimestamp()
     let timeStamp = NSDate().timeIntervalSince1970
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleTextField.delegate = self
+        categoryTextField.delegate = self
+        contentTextField.delegate = self
+        view.backgroundColor = .clear
+        
         
         
         
@@ -25,18 +45,25 @@ class PublishViewController: UIViewController {
     }
     
     func addData() {
-        let articles = Firestore.firestore().collection("articles")
+        let articles = db.collection("articles")
         let document = articles.document()
         let data: [String: Any] = [ "author": [
             "email": "wayne@school.appworks.tw", "id": "waynechen323",
             "name": "AKA小安老師"
         ],
-                                    "title": "IU「亂穿」竟美出新境界!笑稱自己品味奇怪 網笑:靠顏值撐住女神氣場",
-                                    "content": "南韓歌手IU(李知恩)無論在歌唱方面或是近期的戲劇作品都有亮眼的成績，但俗話說人無完美、美玉微瑕，曾再跟工作人員的互動影片中坦言自己品味很奇怪，近日在IG上分享了宛如「媽媽們青春時代的玉女歌手」超復古穿搭造型，卻意外美出新境界。", "createdTime": NSDate().timeIntervalSince1970,
+                                    "title": "\(inputDatas[0])",
+                                    "content": "\(inputDatas[2])", "createdTime": NSDate().timeIntervalSince1970,
                                     "id": document.documentID,
-                                    "category": "Beauty"
+                                    "category": "\(inputDatas[1])"
         ]
         document.setData(data) }
-    
-    
+}
+
+extension PublishViewController:  UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        inputDatas[0] = titleTextField.text ?? ""
+        inputDatas[1] = categoryTextField.text ?? ""
+        inputDatas[2] = contentTextField.text ?? ""
+        print("Did end editing")
+    }
 }
